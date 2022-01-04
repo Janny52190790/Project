@@ -1,5 +1,5 @@
 # Assignment 0 - Hello World!
-due on Jan 6 2022
+due on Jan 6 2022.
 A C program print out Hello World!
 
 # Building
