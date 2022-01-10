@@ -50,8 +50,8 @@ gnuplot <<END
     set terminal pdf
     set output "figure4.pdf"
     set title "Collatz Sequence Length Histogram"
-    set xlabel "frequency"
-    set ylabel "length"
+    set xlabel "length"
+    set ylabel "frequency"
     set xrange [0:225]
     set boxwidth 0.01 relative
     set style fill solid 1.0
