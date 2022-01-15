@@ -14,5 +14,5 @@ $ make clean
 ## Running
 
 ```
-$ ./plot.sh
+$ ./integrate  -<function> -p <low> -q <high> -n <partition>
 ```
