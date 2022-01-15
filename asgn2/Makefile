@@ -19,4 +19,4 @@ clean:
 	rm -f integrate *.o
 
 format:
-	clang-format -i -style=file *.{c,h}
+	clang-format -i -style=file *.[c,h]
