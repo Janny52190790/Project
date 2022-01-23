@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
     int elements = 100;
     int size = 100;
     uint32_t seed = 13371453;
-    srand(seed);
+    srandom(seed);
     Set arguments = empty_set();
     int opt = 0;
     while ((opt = getopt(argc, argv, OPTION)) != -1) {
@@ -58,7 +58,7 @@ int main(int argc, char **argv) {
         case 'r':
             seed = (uint32_t) strtoul(optarg, NULL, 10);
             break;
-            srand(seed);
+            srandom(seed);
         case 'n': size = (uint32_t) strtoul(optarg, NULL, 10); break;
         case 'p': elements = (uint32_t) strtoul(optarg, NULL, 10); break;
         case 'H': usage(argv[0]); return EXIT_FAILURE;
@@ -72,7 +72,7 @@ int main(int argc, char **argv) {
     uint32_t *A;
     A = (uint32_t *) malloc(size * sizeof(uint32_t));
     for (int i = 0; i < size; i++) {
-        A[i] = rand() & (int) (pow(2, 30) - 1);
+        A[i] = random() & (int) (pow(2, 30) - 1);
     }
     // create a random list
     uint32_t n = size;
@@ -148,12 +148,12 @@ int main(int argc, char **argv) {
         free(A);
 
         reset(sortingstats);
-        srand(seed);
+        srandom(seed);
         //reset A list
         uint32_t *A1;
         A1 = (uint32_t *) malloc(size * sizeof(uint32_t));
         for (int i = 0; i < size; i++) {
-            A1[i] = rand() & (int) (pow(2, 30) - 1);
+            A1[i] = random() & (int) (pow(2, 30) - 1);
         }
         uint32_t n1 = size;
 
@@ -169,12 +169,12 @@ int main(int argc, char **argv) {
         free(A1);
 
         reset(sortingstats);
-        srand(seed);
+        srandom(seed);
         //reset A
         uint32_t *A2;
         A2 = (uint32_t *) malloc(size * sizeof(uint32_t));
         for (int i = 0; i < size; i++) {
-            A2[i] = rand() & (int) (pow(2, 30) - 1);
+            A2[i] = random() & (int) (pow(2, 30) - 1);
         }
         uint32_t n2 = size;
 
@@ -190,12 +190,12 @@ int main(int argc, char **argv) {
         free(A2);
 
         reset(sortingstats);
-        srand(seed);
+        srandom(seed);
         // reset A
         uint32_t *A3;
         A3 = (uint32_t *) malloc(size * sizeof(uint32_t));
         for (int i = 0; i < size; i++) {
-            A3[i] = rand() & (int) (pow(2, 30) - 1);
+            A3[i] = random() & (int) (pow(2, 30) - 1);
         }
         uint32_t n3 = size;
 
