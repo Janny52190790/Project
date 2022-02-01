@@ -26,6 +26,11 @@ int main(int argc, char **argv) {
         case 'o': output = fopen(optarg, "w"); break;
         }
     }
+    if (generations < 0) {
+        printf("invalid generation\n");
+        return 1;
+    }
+
     if (input == NULL) {
         printf("file is invalid");
         return 1;
@@ -37,7 +42,11 @@ int main(int argc, char **argv) {
 
     Universe *A = uv_create(rows, cols, toroidal);
     Universe *B = uv_create(rows, cols, toroidal);
-    uv_populate(A, input);
+    //uv_populate(A, input);
+    if (!uv_populate(A, input)) {
+        printf("point is invalid\n");
+        return 1;
+    }
     fclose(input);
     initscr();
     curs_set(FALSE);
