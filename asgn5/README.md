@@ -30,16 +30,16 @@ $ ./decrypt  -i <input file> -o <output file> -n <private key file>
 • -d pvfile: specifies the private key file (default: rsa.priv).\
 • -s: specifies the random seed for the random state initialization (default: the seconds since the UNIX epoch, given by time(NULL)).\
 • -v: enables verbose output.\
-• -h: displays program synopsis and usage.\
+• -h: displays program synopsis and usage.
 ## encrypt
 • -i: specifies the input file to encrypt (default: stdin).\
 • -o: specifies the output file to encrypt (default: stdout).\
 • -n: specifies the file containing the public key (default: rsa.pub).\
 • -v: enables verbose output.\
-• -h: displays program synopsis and usage.\
+• -h: displays program synopsis and usage.
 ## decrypt
 • -i: specifies the input file to decrypt (default: stdin).\
 • -o: specifies the output file to decrypt (default: stdout).\
 • -n: specifies the file containing the private key (default: rsa.priv).\
 • -v: enables verbose output.\
-• -h: displays program synopsis and usage.\
+• -h: displays program synopsis and usage.
