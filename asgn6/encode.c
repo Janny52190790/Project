@@ -131,6 +131,7 @@ int main(int argc, char **argv) {
         printf("space saving: %.2f\n", 100 * (1 - ((double) status / (double) head.file_size)));
     }
 
+    delete_tree(&n);
     close(input);
     close(output);
     return 0;

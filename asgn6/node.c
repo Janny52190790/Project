@@ -19,8 +19,8 @@ void node_delete(Node **n) {
     // The destructor for a node.
     free(*n);
     *n = NULL;
-    free(n);
-    n = NULL;
+    //free(n);
+    //n = NULL;
     return;
 }
 

@@ -42,7 +42,8 @@ Node *build_tree(uint64_t hist[static ALPHABET]) {
             return 0;
         }
     }
-    dequeue(q, &parent); //
+    dequeue(q, &parent);
+    pq_delete(&q);
     return parent;
 }
 
@@ -117,6 +118,9 @@ void delete_tree(Node **root) {
     if (*root) {
         delete_tree(&(*root)->left);
         delete_tree(&(*root)->right);
+        if ((*root)->left == NULL && (*root)->right == NULL) {
+            node_delete(&(*root));
+        }
         node_delete(root);
     }
     return;
