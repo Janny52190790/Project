@@ -65,7 +65,7 @@ bool code_clr_bit(Code *c, uint32_t i) {
 // cite the idea from Miles section.
 bool code_get_bit(Code *c, uint32_t i) {
     // Gets the bit at index i in the Code.
-    if (0 <= i && i <= MAX_CODE_SIZE) {
+    if (i < ALPHABET) {
         int kbyte = i / 8; // the byte index
         int kbit = i % 8; // the bit index
         return ((c->bits[kbyte] & (1 << kbit)) != 0);
@@ -95,6 +95,7 @@ bool code_push_bit(Code *c, uint8_t bit) {
 bool code_pop_bit(Code *c, uint8_t *bit) {
     // Pops a bit off the Code.
     if (!code_empty(c)) {
+        //c->top = c->top - 1;
         //*bit = code_get_bit(c, c->top);
         if (code_get_bit(c, c->top)) {
             *bit = 1;
@@ -103,6 +104,7 @@ bool code_pop_bit(Code *c, uint8_t *bit) {
         }
 
         c->top = c->top - 1;
+        //printf("%d\n", c->top);
         return true;
     } else {
         return false;

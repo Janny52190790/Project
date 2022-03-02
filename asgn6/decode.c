@@ -100,14 +100,12 @@ int main(int argc, char **argv) {
     ;
     write_bytes(output, bbuffer, indexb);
 
-    struct stat buffer;
-    int status;
-    status = fstat(output, &buffer);
+    double status = head.tree_size + 16;
 
     if (compression) {
         printf("file size: %lu bytes\n", head.file_size);
-        printf("compressed file size: %d bytes\n", status);
-        printf("space saving: %.2lu", 100 * (1 - (head.file_size / status)));
+        printf("compressed file size: %f bytes\n", status);
+        printf("space saving: %.2f\n", 100 * (1 - ((double) status / (double) head.file_size)));
     }
 
     close(input);

@@ -114,6 +114,10 @@ Node *rebuild_tree(uint16_t nbytes, uint8_t tree_dump[static nbytes]) {
 
 void delete_tree(Node **root) {
     // The destructor for a Huffman tree.
-    node_delete(root);
+    if (*root) {
+        delete_tree(&(*root)->left);
+        delete_tree(&(*root)->right);
+        node_delete(root);
+    }
     return;
 }

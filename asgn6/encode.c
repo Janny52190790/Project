@@ -51,9 +51,16 @@ int main(int argc, char **argv) {
         }
     }
 
-    if (lseek(input, 0, SEEK_SET) < 0) {
-        input = open("temp.txt", O_RDWR | O_CREAT | O_TRUNC, 0600);
+    uint8_t b[256] = { 0 };
+    int stdfile;
+    if (input == 0) {
+        int temp = open("temp.txt", O_RDWR | O_CREAT | O_TRUNC, 0600);
+        while ((stdfile = read_bytes(input, b, BLOCK)) > 0) {
+            write_bytes(temp, b, stdfile);
+        }
+        input = temp;
     }
+    lseek(input, 0, SEEK_SET);
 
     uint64_t hist[256] = { 0 }; // ASCII + Extended ASCII.
     hist[0] = 1;
@@ -117,13 +124,11 @@ int main(int argc, char **argv) {
     } while (inbytes == 256);
     flush_codes(output);
 
-    struct stat buff;
-    int status;
-    status = fstat(output, &buff);
+    double status = head.tree_size + 16;
     if (compression) {
         printf("file size: %lu bytes\n", head.file_size);
-        printf("compressed file size: %d bytes\n", status);
-        printf("space saving: %.2lu", 100 * (1 - (head.file_size / status)));
+        printf("compressed file size: %f bytes\n", status);
+        printf("space saving: %.2f\n", 100 * (1 - ((double) status / (double) head.file_size)));
     }
 
     close(input);

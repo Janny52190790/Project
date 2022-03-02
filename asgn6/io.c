@@ -63,6 +63,7 @@ void write_code(int outfile, Code *c) {
 		indexb = 0;
 	}*/
     for (uint32_t i = 0; i < code_size(c); i++) {
+        //printf("%d\n", code_size(c));
         if (code_get_bit(c, i) == 0) {
             buf[indexb / 8] &= ~(1 << indexb % 8);
         } else {
