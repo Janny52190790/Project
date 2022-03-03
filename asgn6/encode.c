@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
         }
     }
 
-    uint8_t b[256] = { 0 };
+    uint8_t b[4096] = { 0 };
     int stdfile;
     if (input == 0) {
         int temp = open("temp.txt", O_RDWR | O_CREAT | O_TRUNC, 0600);
@@ -131,6 +131,7 @@ int main(int argc, char **argv) {
         printf("space saving: %.2f\n", 100 * (1 - ((double) status / (double) head.file_size)));
     }
 
+    unlink("temp.txt");
     delete_tree(&n);
     close(input);
     close(output);

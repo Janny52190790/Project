@@ -97,7 +97,7 @@ int main(int argc, char **argv) {
         }
     }
     indexb = head.file_size - bytecount * 256;
-    ;
+
     write_bytes(output, bbuffer, indexb);
 
     double status = head.tree_size + 16;
