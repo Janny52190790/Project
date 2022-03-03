@@ -1,5 +1,5 @@
-# Something I haven’t solved yet
-I couldn’t use stdin and stdout yet. But as soon as you gave the input and output to my encode.c and decode.c. It could encode and decode successflly.\
+#Something I haven’t solved yet
+It is really wired that I could not enqueue binary files but all other files are fine.
 
 # Assignment 6 - Huffman Coding
 Huffman coding is a method to reduce the size of data/message.
