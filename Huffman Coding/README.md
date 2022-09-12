@@ -1,7 +1,4 @@
-#Something I haven’t solved yet
-It is really wired that I could not enqueue binary files but all other files are fine.
-
-# Assignment 6 - Huffman Coding
+# Huffman Coding
 Huffman coding is a method to reduce the size of data/message.
 
 ## Automate compilation by using Makefile

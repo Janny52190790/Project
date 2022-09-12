@@ -1,4 +1,4 @@
-# Assignment 7 - Author Identification
+# Author Identification
 For this assignment, you will be creating a program that attempts to identify the most likely authors for an anonymous sample of text given a large database of texts with known authors.
 ## Building
 ```
