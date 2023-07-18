@@ -1,6 +1,3 @@
-#Something I haven’t solved yet
-It is really wired that I could not enqueue binary files but all other files are fine.
-
 # Huffman Coding
 Huffman coding is a method to reduce the size of data/message.
 
